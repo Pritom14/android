@@ -14,6 +14,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.support.v4.widget.DrawerLayout;
@@ -38,12 +39,15 @@ import net.cyclestreets.routing.Waypoints;
 public abstract class MainNavDrawerActivity
     extends ActionBarActivity
     implements Route.Listener {
+  private static final String TAG = "MainNavDrawerActivity";
+
   private NavigationDrawerFragment navDrawer_;
   private List<DrawerItem> pages_;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    Log.d(TAG, "onCreate");
 
     setContentView(R.layout.mainnavdraweractivity);
 
